@@ -1,0 +1,348 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  font-family: "PT Serif", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #5e5e5e;
+}
+
+.default-btn {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  padding: 8px 30px 8px 24px;
+  border: 1px solid #ffc222;
+  border-right-width: 20px;
+  position: relative;
+  outline: none;
+}
+.default-btn:after {
+  content: "\e903";
+  font-family: "icomoon";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* left: 170px; */
+  right: -15px;
+}
+
+/************* Header **************/
+
+header {
+  font-family: "Roboto", sans-serif;
+}
+
+.header__contacts:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.header__top {
+  background-color: #303030;
+}
+
+.header__btn {
+  float: right;
+  line-height: 36px;
+  color: #1b1b1b;
+  background-color: #ffc222;
+  font-size: 16px;
+  padding: 5px 20px 4px 50px;
+  position: relative;
+}
+
+.header__btn::before {
+  content: "\e905";
+  position: absolute;
+  font-family: "icomoon";
+  left: 22px;
+  color: #1b1b1b;
+}
+.header__email,
+.header__phone {
+  color: #cbcacb;
+  letter-spacing: 0.25px;
+  line-height: 45px;
+  position: relative;
+}
+
+.header__phone {
+  padding-right: 30px;
+  padding-left: 20px;
+}
+
+.header__phone::before {
+  content: "\e902";
+  font-family: "icomoon";
+  position: absolute;
+  left: 0;
+  color: #fcc222;
+}
+
+.header__email {
+  padding-left: 24px;
+}
+
+.header__email::before {
+  content: "\e901";
+  font-family: "icomoon";
+  position: absolute;
+  left: 0;
+  color: #fcc222;
+}
+
+.header__content {
+  padding: 34px 0 23px;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.header__content-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu a {
+  color: #323232;
+  font-size: 16px;
+  line-height: 36px; /*insted of padding*/
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  padding: 0 16px;
+}
+
+.menu li + li {
+  padding-left: 10px;
+}
+
+.menu a:hover {
+  border-color: #ffc222;
+}
+
+/************* End of Header **************/
+
+/************ Hero Section ***************/
+.slider {
+  background-image: url(../img/slider-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  filter: grayscale(30%);
+}
+
+.slider__item-content {
+  text-align: center;
+  padding-top: 110px;
+  max-width: 665px;
+  margin: 0 auto;
+}
+
+.slider__title {
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 36px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+  font-family: "Roboto", sans-serif;
+}
+
+.slider__text {
+  line-height: 24px;
+  font-size: 18px;
+  color: #d3d2d2;
+  margin-bottom: 50px;
+}
+
+.slider__inner {
+  position: relative;
+}
+
+.slick-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 70%;
+  z-index: 3;
+  background-color: #ffc222;
+  outline: none;
+  cursor: pointer;
+}
+
+.slick-btn.slick-disabled {
+  cursor: default;
+  background-color: transparent;
+}
+
+.slick-btn:before {
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "icomoon";
+  color: #fff;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-next:before {
+  content: "\e903";
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-prev:before {
+  content: "\e904";
+}
+
+/************* Modal ****************/
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+}
+.popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s all;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 400px;
+  padding: 25px;
+  transition: 0.5s all;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+}
+
+.close-popup::before {
+  content: "\e908";
+  font-family: "icomoon";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #303030;
+}
+
+.popup label {
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.popup .label__text {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #cfd0d3;
+  margin-bottom: 5px;
+}
+
+.popup input {
+  height: 45px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #cfd0d3;
+}
+
+.popup input:focus {
+  border-bottom: 1px solid #fcc222;
+}
+
+.popup input:focus + .label__text {
+  color: #fcc222;
+}
+
+.popup textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #cfd0d3;
+  font-size: 18px;
+  padding-top: 5px;
+}
+
+.popup textarea:focus {
+  border-bottom: 1px solid #fcc222;
+}
+
+.popup textarea:focus + .label__text {
+  color: #fcc222;
+}
+
+.popup button {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid #fcc222;
+  background: #fcc222;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s all;
+}
+
+.popup button:hover {
+  background: #fff;
+  color: #fcc222;
+  transition: 0.5s all;
+}
+/*************End of Modal ************/
